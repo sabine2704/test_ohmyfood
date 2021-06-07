@@ -1,0 +1,207 @@
+@import "base/_typography.scss";
+@import "layout/_body.scss";
+@import "layout/_footer.scss";
+@import "layout/_header.scss";
+@import "utils/_variables.scss";
+@import "utils/_mixins.scss";
+@import "vendors/_webkit.scss";
+@import "components/_loader.scss";
+
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: $font-size-titre + 10px;
+        text-align: center;
+        font-weight: normal;
+        margin: 10px;
+    }
+    .localisation{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: darken($color-fond, 10%);
+        box-shadow: inset 0 6px 9px -6px rgba(78, 75, 75, 0.5);
+        color: $color-ifont;
+    }
+}
+.presentation{
+    background-color: $color-fond;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25em;
+    text-align: center;
+    h2{
+        max-width: 280px;
+    }
+    .button__explore{
+       @include button_form;
+       @include button_colorpink;
+       @include shadow;
+       &:hover{
+        opacity: 0.85;
+        @include shadow_darken;
+        }
+    }
+}
+
+.fonctionnement{
+    h2{
+        margin-bottom: 30px;
+    }
+    .button__number{
+        @include button_form_number;
+        position: absolute;
+        z-index: 1;
+        margin-top: 30px;
+        
+    }
+    .button__fontion{
+        display: flex;
+        align-items: center;
+        @include button_form;
+        @include button_colorgris;
+        @include shadow;
+        color: black;
+        margin: 0 0 30px 10px;
+        &:hover{
+            background: lightness($color-fond);
+            @include shadow_darken;
+            i{
+                color: $color-primary;
+            }
+        }
+    }
+    i{
+        margin-left: 25px;
+        margin-right: 20px;
+        color: $color-ifont;
+    }
+    p{
+        font-weight: bold;
+    }
+}
+
+.restaurants{
+    max-width: 375px;
+    width: 100%;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+.bloc_restaurants{
+    max-width: 335px;
+    width: 100%;
+    max-height: 1060px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    .vignette{
+        max-width: 335px;
+        max-height: 250px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        @include shadow;
+        border-radius: 25px;
+    }
+   
+.image{ 
+    display: flex;
+    
+    img{
+        max-width: 335px;
+        width: 335px;
+        max-height: 175px;
+        object-fit: cover;
+        border-radius: 25px 25px 0 0;
+        
+        z-index: 1;
+    }
+    .button_new{
+        width: 80px;
+        height: 30px;
+        position: absolute;
+        z-index: 2;
+        margin-left: 240px;
+        margin-top: 20px;
+        color: darken($color_tertiary, 40%);
+        background: $color-tertiary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+        font-weight: 500;
+        border-radius: 4px;
+    }
+}
+    .description{
+        max-width: 375px;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .texte{
+        max-height: 75px;
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    p{
+        margin: 0;
+    }
+    .nom{
+        font-weight: bold;
+    }
+}
+.coeur{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button-coeur{
+        &__vide{
+            @include coeur_size;
+            &:hover{
+                display: none;
+            }
+        }
+        &__plein{
+            @include coeur_size;
+            @include coeur-pink;
+            display: none;
+            &:hover{
+                @include coeur-pink;
+                display: block;
+            }
+        }
+    }
+}
+
+footer{
+    background-color: $color-footer;
+    color: $color-font-footer;
+    padding: 1.5em;
+    h3{
+        font-weight: normal;
+        margin-top: 0;
+    }
+    p{
+        line-height: 15px;
+        font-family: "roboto";
+        display: flex;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
